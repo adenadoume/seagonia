@@ -79,12 +79,12 @@ export default function Gallery() {
       <section
         className="relative h-[40vh] min-h-[320px] flex items-center justify-center"
         style={{
-          backgroundImage: `url(${PLACEHOLDER_IMAGES.ionian})`,
+          backgroundImage: `url(${HOTEL_IMAGES.littleIonian})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-stone/60" />
+        <div className="absolute inset-0 bg-navy/60" />
         <div className="relative z-10 text-center text-white px-4">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl">
             Gallery
@@ -103,8 +103,8 @@ export default function Gallery() {
                 onClick={() => setActiveFilter(cat)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
                   activeFilter === cat
-                    ? 'bg-sea text-white'
-                    : 'bg-sand/30 text-stone hover:bg-sand/50'
+                    ? 'bg-gold text-white'
+                    : 'bg-cream/50 text-charcoal hover:bg-cream'
                 }`}
               >
                 {cat}
