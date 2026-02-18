@@ -120,7 +120,7 @@ export default function Home() {
             variants={fadeIn}
             initial="hidden"
             animate="visible"
-            className="font-serif text-display text-white tracking-widest"
+            className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-display text-white tracking-wide sm:tracking-widest"
           >
             SEAGONIA
           </motion.h1>
