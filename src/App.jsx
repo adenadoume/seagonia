@@ -38,6 +38,8 @@ export default function App() {
             <Route path="/amenities" element={<Amenities />} />
             <Route path="/area" element={<Area />} />
             <Route path="/hotel" element={<Hotel />} />
+            <Route path="/dining" element={<Dining />} />
+            <Route path="/experiences" element={<Experiences />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/location" element={<Location />} />
             <Route path="/contact" element={<Contact />} />
