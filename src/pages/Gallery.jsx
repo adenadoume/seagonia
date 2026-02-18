@@ -1,30 +1,53 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import useSEO from '../hooks/useSEO'
-import { PLACEHOLDER_IMAGES } from '../constants/hotel'
+import { HOTEL_IMAGES } from '../constants/hotel'
 import ImageLightbox from '../components/shared/ImageLightbox'
 
 const categories = ['All', 'Hotel', 'Rooms', 'Pool', 'Dining', 'Experiences']
 
 const galleryImages = [
-  { src: PLACEHOLDER_IMAGES.hero, category: 'Hotel', alt: 'Seagonia Hotel aerial view' },
-  { src: PLACEHOLDER_IMAGES.pool, category: 'Pool', alt: 'Swimming pool' },
-  { src: PLACEHOLDER_IMAGES.seaView, category: 'Hotel', alt: 'Ionian Sea view' },
-  { src: PLACEHOLDER_IMAGES.roomGarden, category: 'Rooms', alt: 'Garden Room' },
-  { src: PLACEHOLDER_IMAGES.roomSwimUp, category: 'Rooms', alt: 'Swim-Up Room' },
-  { src: PLACEHOLDER_IMAGES.roomBalcony, category: 'Rooms', alt: 'Balcony Room' },
-  { src: PLACEHOLDER_IMAGES.roomTerrace, category: 'Rooms', alt: 'Terrace Suite' },
-  { src: PLACEHOLDER_IMAGES.roomSuite, category: 'Rooms', alt: 'Seagonia Suite' },
-  { src: PLACEHOLDER_IMAGES.restaurant, category: 'Dining', alt: 'Galia Restaurant' },
-  { src: PLACEHOLDER_IMAGES.breakfast, category: 'Dining', alt: 'Breakfast buffet' },
-  { src: PLACEHOLDER_IMAGES.boatTrip, category: 'Experiences', alt: 'Boat trip on the Ionian' },
-  { src: PLACEHOLDER_IMAGES.hiking, category: 'Experiences', alt: 'Hiking trails near Paleros' },
-  { src: PLACEHOLDER_IMAGES.yoga, category: 'Experiences', alt: 'Outdoor yoga session' },
-  { src: PLACEHOLDER_IMAGES.cooking, category: 'Experiences', alt: 'Cooking class' },
-  { src: PLACEHOLDER_IMAGES.spa, category: 'Pool', alt: 'Wellness and spa area' },
-  { src: PLACEHOLDER_IMAGES.fitness, category: 'Hotel', alt: 'Technogym fitness centre' },
-  { src: PLACEHOLDER_IMAGES.beach, category: 'Hotel', alt: 'Sandy beach near the hotel' },
-  { src: PLACEHOLDER_IMAGES.ionian, category: 'Experiences', alt: 'Ionian islands' },
+  // Hotel & Exterior
+  { src: HOTEL_IMAGES.hero, category: 'Hotel', alt: 'Seagonia Hotel pool and facade' },
+  { src: HOTEL_IMAGES.entrance, category: 'Hotel', alt: 'Hotel entrance with SEAGONIA sign' },
+  { src: HOTEL_IMAGES.hotelInPogonia, category: 'Hotel', alt: 'Seagonia Hotel in Pogonia bay' },
+  { src: HOTEL_IMAGES.hotelBirdseye, category: 'Hotel', alt: 'Hotel aerial birdseye view' },
+  { src: HOTEL_IMAGES.pogoniaPanorama, category: 'Hotel', alt: 'Pogonia bay panoramic view' },
+  { src: HOTEL_IMAGES.pogoniaBeach, category: 'Hotel', alt: 'Pogonia beach with sunbeds' },
+  { src: HOTEL_IMAGES.palerosHarbor, category: 'Hotel', alt: 'Paleros harbor' },
+
+  // Rooms
+  { src: HOTEL_IMAGES.roomBalcony, category: 'Rooms', alt: 'Type D Balcony Room interior' },
+  { src: HOTEL_IMAGES.roomSwimUp, category: 'Rooms', alt: 'Type B Swim-Up Room with pool' },
+  { src: HOTEL_IMAGES.roomSwimUpExterior, category: 'Rooms', alt: 'Swim-up rooms exterior corridor' },
+  { src: HOTEL_IMAGES.roomExteriorBalconies, category: 'Rooms', alt: 'Building exterior with balconies' },
+  { src: HOTEL_IMAGES.roomGarden, category: 'Rooms', alt: 'Garden rooms with private patios' },
+
+  // Pool
+  { src: HOTEL_IMAGES.poolArea, category: 'Pool', alt: 'Pool area and multipurpose room' },
+  { src: HOTEL_IMAGES.poolDeck, category: 'Pool', alt: 'Pool deck with sunbeds and umbrellas' },
+  { src: HOTEL_IMAGES.roomSwimUpExterior, category: 'Pool', alt: 'Swim-up pool corridor' },
+
+  // Dining
+  { src: HOTEL_IMAGES.galiaRooftop, category: 'Dining', alt: 'Galia Rooftop Restaurant render' },
+  { src: HOTEL_IMAGES.outdoorDining, category: 'Dining', alt: 'Outdoor dining under the trees' },
+  { src: HOTEL_IMAGES.cheesePlatter, category: 'Dining', alt: 'Local cheese & bread platter' },
+  { src: HOTEL_IMAGES.foodBurrata, category: 'Dining', alt: 'Burrata and tomato salad' },
+  { src: HOTEL_IMAGES.foodDolmades, category: 'Dining', alt: 'Traditional dolmades' },
+  { src: HOTEL_IMAGES.foodPide, category: 'Dining', alt: 'Mediterranean flatbread' },
+  { src: HOTEL_IMAGES.sunsetDining, category: 'Dining', alt: 'Sunset dining at harbor' },
+  { src: HOTEL_IMAGES.farmLettuce, category: 'Dining', alt: 'Fresh lettuce from our farm' },
+
+  // Experiences
+  { src: HOTEL_IMAGES.yogaGroup, category: 'Experiences', alt: 'Outdoor yoga group session' },
+  { src: HOTEL_IMAGES.massage, category: 'Experiences', alt: 'Spa massage therapy' },
+  { src: HOTEL_IMAGES.pureSpa, category: 'Experiences', alt: 'PURE Spa interior' },
+  { src: HOTEL_IMAGES.beekeeping, category: 'Experiences', alt: 'Beekeeping experience' },
+  { src: HOTEL_IMAGES.cookingClass, category: 'Experiences', alt: 'Traditional cooking class' },
+  { src: HOTEL_IMAGES.vathiavali, category: 'Experiences', alt: 'Vathiavali beach aerial' },
+  { src: HOTEL_IMAGES.islandBeach, category: 'Experiences', alt: 'Ionian island cliff beach' },
+  { src: HOTEL_IMAGES.islandCoast, category: 'Experiences', alt: 'Dramatic Ionian coast' },
+  { src: HOTEL_IMAGES.littleIonian, category: 'Experiences', alt: 'The Little Ionian islands' },
 ]
 
 export default function Gallery() {

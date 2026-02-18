@@ -4,27 +4,40 @@
 
 @layer base {
   html { scroll-behavior: smooth; }
-  body { @apply font-sans text-stone bg-cream m-0; }
-  h1, h2, h3 { @apply font-serif; }
+  body {
+    @apply font-sans text-charcoal bg-cream m-0;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-normal;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-sea text-white px-6 py-3 rounded-full font-medium
-           hover:bg-sea-dark transition-colors duration-200;
+    @apply bg-gold text-white px-8 py-3.5 font-sans font-medium text-sm
+           tracking-wider uppercase
+           hover:bg-gold-dark transition-all duration-300;
   }
   .btn-outline {
-    @apply border-2 border-white text-white px-6 py-3 rounded-full
-           font-medium hover:bg-white hover:text-sea transition-colors duration-200;
+    @apply border border-white/60 text-white px-8 py-3.5 font-sans font-medium text-sm
+           tracking-wider uppercase
+           hover:bg-white hover:text-navy transition-all duration-300;
   }
   .btn-outline-dark {
-    @apply border-2 border-sea text-sea px-6 py-3 rounded-full
-           font-medium hover:bg-sea hover:text-white transition-colors duration-200;
+    @apply border border-navy text-navy px-8 py-3.5 font-sans font-medium text-sm
+           tracking-wider uppercase
+           hover:bg-navy hover:text-white transition-all duration-300;
   }
   .section-padding {
-    @apply px-4 sm:px-8 lg:px-16 py-16 lg:py-24;
+    @apply px-6 sm:px-10 lg:px-20 py-20 lg:py-30;
+  }
+  .eyebrow {
+    @apply font-sans font-medium text-xs uppercase tracking-eyebrow text-gold;
   }
   .card {
-    @apply bg-white rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] overflow-hidden;
+    @apply bg-white overflow-hidden;
   }
 }

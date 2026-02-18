@@ -362,23 +362,124 @@ export const EXPERIENCES = [
   },
 ]
 
+// Real images extracted from OIK105 SEAGONIA HOTEL PDF
+const IMG = '/images/hotel'
+
+export const HOTEL_IMAGES = {
+  // Hero & Hotel Exterior
+  hero: `${IMG}/img-000.jpg`,              // Pool facade with sunbeds — main hero
+  heroAlt: `${IMG}/img-038.jpg`,           // Pool facade alternate angle
+  entrance: `${IMG}/img-028.jpg`,          // Hotel entrance with SEAGONIA sign
+  poolArea: `${IMG}/img-031.jpg`,          // Pool area multipurpose view with trailing plants
+  poolDeck: `${IMG}/img-000.jpg`,          // Pool with deck and umbrellas
+
+  // Aerial & Location
+  palerosBay: `${IMG}/img-001.jpg`,        // Paleros Bay aerial with labels
+  pogoniaCoast: `${IMG}/img-002.jpg`,      // Pogonia coast aerial with labels
+  littleIonian: `${IMG}/img-003.jpg`,      // Little Ionian islands aerial
+  pogoniaPanorama: `${IMG}/img-004.jpg`,   // Pogonia bay panoramic
+  pogoniaVillage: `${IMG}/img-005.jpg`,    // Pogonia village from above
+  pogoniaBeach: `${IMG}/img-006.jpg`,      // Pogonia beach with sunbeds
+  tavernaView: `${IMG}/img-007.jpg`,       // Restaurant terrace/taverna
+  palerosHarbor: `${IMG}/img-009.jpg`,     // Paleros harbor aerial
+  palerosPromenade: `${IMG}/img-010.jpg`,  // Paleros taverna promenade
+  palerosWineDining: `${IMG}/img-011.jpg`, // Women dining at harbor
+  hotelInPogonia: `${IMG}/img-015.jpg`,    // Hotel in Pogonia from distance
+  hotelAerialBeach: `${IMG}/img-016.jpg`,  // Aerial top-down of beach area
+  hotelBirdseye: `${IMG}/img-017.jpg`,     // Top-down aerial of hotel building
+
+  // Nearby Beaches
+  vathiavali: `${IMG}/img-012.jpg`,        // Vathiavali beach aerial - turquoise
+  varkoBay: `${IMG}/img-013.jpg`,          // Varko Bay aerial
+  gerakas: `${IMG}/img-014.jpg`,           // Gerakas beach
+
+  // Room Interiors & Renders
+  roomBalcony: `${IMG}/img-028.jpg`,       // Type D room interior with balcony and mountain view
+  roomSwimUp: `${IMG}/img-029.jpg`,        // Type B swim-up room with pool and daybed
+  roomSwimUpExterior: `${IMG}/img-030.jpg`,// Swim-up pool corridor exterior
+  roomGarden: `${IMG}/img-027.jpg`,        // Room exterior with garden patios
+  roomExteriorBalconies: `${IMG}/img-031.jpg`, // Building exterior with balconies (page 17)
+  roomSuite: `${IMG}/img-028.jpg`,         // Suite entrance render
+
+  // F&B - Galià Rooftop
+  galiaRooftop: `${IMG}/img-038.jpg`,      // Galià rooftop render (similar to hero)
+  galiaView: `${IMG}/img-037.jpg`,         // View from Galià over bay
+
+  // F&B - Seagonia Lounge
+  loungeAerial: `${IMG}/img-017.jpg`,      // Lounge aerial view
+  cheesePlatter: `${IMG}/img-042.jpg`,     // Cheese & bread platter
+  shrimpPasta: `${IMG}/img-041.jpg`,       // Shrimp orzo pasta
+  cocktail: `${IMG}/img-043.jpg`,          // Cocktail
+
+  // F&B - Food
+  foodPide: `${IMG}/img-039.jpg`,          // Pide/flatbread with prosciutto
+  foodBurrata: `${IMG}/img-035.jpg`,       // Burrata tomato salad
+  foodDolmades: `${IMG}/img-050.jpg`,      // Dolmades with yogurt
+  foodSteak: `${IMG}/img-051.jpg`,         // Grilled steak
+
+  // Farm to Table
+  farmLettuce: `${IMG}/img-044.jpg`,       // Fresh lettuce in field
+  farmFlowers: `${IMG}/img-046.jpg`,       // Zucchini flowers harvest
+  farmField: `${IMG}/img-054.jpg`,         // Farm field panoramic
+  farmTractor: `${IMG}/img-045.jpg`,       // Farm with tractor
+
+  // Dining
+  outdoorDining: `${IMG}/img-049.jpg`,     // Yacht Club outdoor dining table
+  sunsetDining: `${IMG}/img-048.jpg`,      // Sunset harbor dining
+
+  // Cooking Classes
+  cookingClass: `${IMG}/img-055.jpg`,      // Woman making phyllo dough
+  cookingResult: `${IMG}/img-059.jpg`,     // Baked pastry result
+
+  // Beekeeping
+  beekeeping: `${IMG}/img-060.jpg`,        // Beekeeper at hives with sea view
+  honeycomb: `${IMG}/img-061.jpg`,         // Honeycomb closeup
+
+  // Spa & Wellness
+  massage: `${IMG}/img-036.jpg`,           // Massage therapy
+  pureSpa: `${IMG}/img-062.jpg`,           // PURE Spa interior
+  facialTreatment: `${IMG}/img-065.jpg`,   // Facial treatment
+
+  // Fitness
+  outdoorFitness: `${IMG}/img-071.jpg`,    // Outdoor shaded fitness pavilion
+  yogaGroup: `${IMG}/img-034.jpg`,         // Yoga group session on deck
+  gym: `${IMG}/img-072.jpg`,              // Indoor Technogym
+
+  // Open Water Swimming
+  openWaterSwim: `${IMG}/img-015.jpg`,     // Beach with swimming markers
+
+  // Boat Trips & Islands
+  islandBeach: `${IMG}/img-073.jpg`,       // Island cliff beach
+  islandVillage: `${IMG}/img-074.jpg`,     // Island village/taverna
+  islandCoast: `${IMG}/img-075.jpg`,       // Dramatic coast with yacht
+
+  // Hiking
+  hikingView: `${IMG}/img-076.jpg`,        // Hiking mountain panoramic view
+  ancientRuins: `${IMG}/img-008.jpg`,      // Archaeological site
+
+  // Floor Plans
+  floorplanGround: `${IMG}/img-019.jpg`,   // Ground floor plan
+  floorplan1st: `${IMG}/img-018.jpg`,      // 1st floor plan
+}
+
+// Legacy aliases for backward compatibility with existing components
 export const PLACEHOLDER_IMAGES = {
-  hero: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&auto=format&fit=crop',
-  pool: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&auto=format&fit=crop',
-  seaView: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&auto=format&fit=crop',
-  roomGarden: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&auto=format&fit=crop',
-  roomSwimUp: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&auto=format&fit=crop',
-  roomBalcony: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop',
-  roomTerrace: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&auto=format&fit=crop',
-  roomSuite: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&auto=format&fit=crop',
-  restaurant: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&auto=format&fit=crop',
-  breakfast: 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=800&auto=format&fit=crop',
-  ionian: 'https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?w=800&auto=format&fit=crop',
-  beach: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop',
-  yoga: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop',
-  spa: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&auto=format&fit=crop',
-  cooking: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&auto=format&fit=crop',
-  fitness: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&auto=format&fit=crop',
-  boatTrip: 'https://images.unsplash.com/photo-1548574505-5e239809ee19?w=800&auto=format&fit=crop',
-  hiking: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&auto=format&fit=crop',
+  hero: HOTEL_IMAGES.hero,
+  pool: HOTEL_IMAGES.poolDeck,
+  seaView: HOTEL_IMAGES.pogoniaPanorama,
+  roomGarden: HOTEL_IMAGES.roomGarden,
+  roomSwimUp: HOTEL_IMAGES.roomSwimUp,
+  roomBalcony: HOTEL_IMAGES.roomBalcony,
+  roomTerrace: HOTEL_IMAGES.roomSwimUpExterior,
+  roomSuite: HOTEL_IMAGES.roomSuite,
+  restaurant: HOTEL_IMAGES.galiaRooftop,
+  breakfast: HOTEL_IMAGES.cheesePlatter,
+  ionian: HOTEL_IMAGES.littleIonian,
+  beach: HOTEL_IMAGES.pogoniaBeach,
+  yoga: HOTEL_IMAGES.yogaGroup,
+  spa: HOTEL_IMAGES.pureSpa,
+  cooking: HOTEL_IMAGES.cookingClass,
+  fitness: HOTEL_IMAGES.gym,
+  boatTrip: HOTEL_IMAGES.islandBeach,
+  hiking: HOTEL_IMAGES.hikingView,
 }

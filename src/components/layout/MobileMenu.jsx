@@ -4,10 +4,12 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { HOTEL } from '../../constants/hotel'
 
 const NAV_LINKS = [
+  { label: 'The Area', to: '/area' },
+  { label: 'The Hotel', to: '/hotel' },
   { label: 'Rooms', to: '/rooms' },
-  { label: 'Amenities', to: '/amenities' },
+  { label: 'Dining', to: '/dining' },
+  { label: 'Experiences', to: '/experiences' },
   { label: 'Gallery', to: '/gallery' },
-  { label: 'Location', to: '/location' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -17,47 +19,36 @@ export default function MobileMenu({ isOpen, onClose }) {
       {isOpen && (
         <motion.div
           key="mobile-menu"
-          className="fixed inset-0 z-50 bg-white flex flex-col overflow-y-auto"
+          className="fixed inset-0 z-[60] bg-navy flex flex-col overflow-y-auto"
           initial={{ x: '100%' }}
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
-          transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
+          transition={{ type: 'tween', duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          {/* Top bar */}
-          <div className="flex items-center justify-between px-6 py-5 border-b border-stone/10">
-            {/* Logo centered */}
-            <div className="flex-1 flex justify-center">
-              <Link
-                to="/"
-                className="font-serif text-xl tracking-[0.3em] uppercase font-semibold text-sea"
-                onClick={onClose}
-              >
-                SEAGONIA
-              </Link>
-            </div>
-            {/* Close button */}
+          {/* Close button — top right */}
+          <div className="flex items-center justify-end px-6 py-6">
             <button
               onClick={onClose}
-              className="absolute right-6 p-2 text-stone hover:text-sea transition-colors"
+              className="p-2 text-white/70 hover:text-gold transition-colors duration-200"
               aria-label="Close menu"
             >
-              <X size={24} />
+              <X size={28} strokeWidth={1.5} />
             </button>
           </div>
 
           {/* Nav links */}
-          <nav className="flex flex-col items-center justify-center flex-1 gap-6 py-10 px-6">
+          <nav className="flex flex-col items-center justify-center flex-1 gap-8 py-8 px-6">
             {NAV_LINKS.map((link, index) => (
               <motion.div
                 key={link.to}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + index * 0.07, duration: 0.3 }}
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.15 + index * 0.06, duration: 0.4, ease: 'easeOut' }}
               >
                 <Link
                   to={link.to}
                   onClick={onClose}
-                  className="font-serif text-3xl font-semibold text-stone hover:text-sea transition-colors duration-200 tracking-wide"
+                  className="font-serif text-3xl sm:text-4xl font-semibold text-white hover:text-gold transition-colors duration-200 tracking-wide"
                 >
                   {link.label}
                 </Link>
@@ -66,16 +57,16 @@ export default function MobileMenu({ isOpen, onClose }) {
           </nav>
 
           {/* Book Now button */}
-          <div className="px-6 pb-6">
+          <div className="px-8 pb-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45, duration: 0.3 }}
+              transition={{ delay: 0.55, duration: 0.4 }}
             >
               <Link
                 to="/book"
                 onClick={onClose}
-                className="btn-primary w-full flex items-center justify-center rounded-full py-4 text-base font-sans font-medium"
+                className="w-full flex items-center justify-center bg-gold hover:bg-gold-dark text-white py-4 text-sm font-sans font-semibold uppercase tracking-[0.12em] transition-colors duration-300"
               >
                 Book Now
               </Link>
@@ -84,24 +75,24 @@ export default function MobileMenu({ isOpen, onClose }) {
 
           {/* Contact info at bottom */}
           <motion.div
-            className="px-6 pb-8 pt-2 border-t border-stone/10 flex flex-col items-center gap-3"
+            className="px-8 pb-10 pt-4 border-t border-white/10 flex flex-col items-center gap-3"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.3 }}
+            transition={{ delay: 0.65, duration: 0.4 }}
           >
             <a
-              href={`tel:${HOTEL.phone}`}
-              className="flex items-center gap-2 text-sm font-sans text-stone hover:text-sea transition-colors"
+              href={`tel:${HOTEL.contact.phone}`}
+              className="flex items-center gap-2.5 text-sm font-sans text-white/60 hover:text-gold-light transition-colors"
             >
-              <Phone size={16} />
-              <span>{HOTEL.phone}</span>
+              <Phone size={15} />
+              <span>{HOTEL.contact.phone}</span>
             </a>
             <a
-              href={`mailto:${HOTEL.email}`}
-              className="flex items-center gap-2 text-sm font-sans text-stone hover:text-sea transition-colors"
+              href={`mailto:${HOTEL.contact.email}`}
+              className="flex items-center gap-2.5 text-sm font-sans text-white/60 hover:text-gold-light transition-colors"
             >
-              <Mail size={16} />
-              <span>{HOTEL.email}</span>
+              <Mail size={15} />
+              <span>{HOTEL.contact.email}</span>
             </a>
           </motion.div>
         </motion.div>

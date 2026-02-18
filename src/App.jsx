@@ -7,7 +7,11 @@ import Home from './pages/Home'
 import Rooms from './pages/Rooms'
 import RoomDetail from './pages/RoomDetail'
 import Amenities from './pages/Amenities'
+import Dining from './pages/Dining'
+import Experiences from './pages/Experiences'
 import Gallery from './pages/Gallery'
+import Area from './pages/Area'
+import Hotel from './pages/Hotel'
 import Location from './pages/Location'
 import Contact from './pages/Contact'
 import Book from './pages/Book'
@@ -32,6 +36,8 @@ export default function App() {
             <Route path="/rooms" element={<Rooms />} />
             <Route path="/rooms/:slug" element={<RoomDetail />} />
             <Route path="/amenities" element={<Amenities />} />
+            <Route path="/area" element={<Area />} />
+            <Route path="/hotel" element={<Hotel />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/location" element={<Location />} />
             <Route path="/contact" element={<Contact />} />
